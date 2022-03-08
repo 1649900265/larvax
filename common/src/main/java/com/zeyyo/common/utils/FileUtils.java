@@ -48,15 +48,15 @@ public class FileUtils {
         // 先判断有没有权限,Environment.getExternalStorageDirectory()需要文件读取权限
         if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED &&
                 ContextCompat.checkSelfPermission(mContext, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-            return Environment.getExternalStorageDirectory().toString() + File.separator + "Download" + File.separator + "OSTestTowerSystem" + File.separator;
+            return Environment.getExternalStorageDirectory().toString() + File.separator + "Download"+ File.separator;
         }
         //}
         //mContext.getExternalCacheDir()不需要文件读取权限
         if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())
                 && mContext.getExternalCacheDir() != null)
-            return mContext.getExternalCacheDir() + File.separator + "OSTestTowerSystem" + File.separator;
+            return mContext.getExternalCacheDir() + File.separator;
         else {
-            return mContext.getCacheDir() + File.separator + "OSTestTowerSystem" + File.separator;
+            return mContext.getCacheDir() + File.separator;
         }
 
     }
